@@ -1,38 +1,48 @@
+/* APP styles */
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER styles... */
+header{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  margin: 0;
+  padding: 0;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 9rem;
+  color: whitesmoke;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.displayArtistInfo{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* MAIN styles....... */
+
+main{
+  min-height: calc(15vh - 20px);
+}
+/* FOOTER styles.... */
+
+footer{
+  color: whitesmoke;
+  min-height: 5vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+footer p a{
+  color: whitesmoke;
 }
