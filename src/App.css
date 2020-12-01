@@ -46,3 +46,8 @@ footer p{
 footer p a{
   color: whitesmoke;
 }
+
+.searchedInfo li{
+  color: whitesmoke;
+  font-size: 2rem;
+}
