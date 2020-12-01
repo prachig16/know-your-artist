@@ -30,7 +30,6 @@ class App extends Component {
   handleInputSubmit = (e) => {
     e.preventDefault();
     this.getArtistDetails(this.state.userSelection);
-    
   }
 
   // calling a function to get the artist details which will use "userChoice" as an input parameter....
@@ -43,103 +42,67 @@ class App extends Component {
         s: userChoice
       }
     }).then((apiData) => {
-      console.log(apiData.data.artists, 'api called');
+      console.log('api call here',apiData.data.artists);
+      if (apiData.data.artists != null){
+    
       this.setState({
         artistsInfo: apiData.data.artists
       })
-      console.log(this.state.artistsInfo);   
-      // this.afterSearch(this.state.artistsInfo); 
+      console.log(this.state.artistsInfo);
+      // after receiving the API call, called the empty DB   
       const dbRef = firebase.database().ref();
-      dbRef.on('value', (returnedInfoObj) => {
-        const newArtist = [];
-        returnedInfoObj = this.state.artistsInfo;
-        for (let key in returnedInfoObj) {
-          const artistInfoObj = {
-            name: returnedInfoObj[key].strArtist,
-            image: returnedInfoObj[key].strArtistThumb
-          }
-          newArtist.push(artistInfoObj);
+      const newArtist = this.state.searchedArtists;
+      dbRef.once('value', (returnedInfoObj) => {
+        // created an empty array to store the object which will be returned from the API object
+        // assigning the parameter to the API artist info call
+        returnedInfoObj = this.state.artistsInfo[0];
+        // for (let key in returnedInfoObj) {
+        const artistInfoObj = {
+          name: returnedInfoObj.strArtist,
+          image: returnedInfoObj.strArtistThumb
         }
+          // pushing this object in the empty array
+      
+        newArtist.push(artistInfoObj);
+        // }
+
+       console.log('inside then',newArtist);
+        dbRef.push(newArtist[0]);
+
         this.setState({
+          // setting this new array with 2 objects to the set
           searchedArtists: newArtist
         })
         console.log(this.state.searchedArtists);
       })
-      dbRef.push(this.state.searchedArtists);  
+      console.log(newArtist);
+      }
+      else{
+        alert('Artist not found! Check the spelling or spaces!')
+      }
     })
   }
   
  
-  
-
-  
-  
-  
-  
-  // writing a function that will take the API call as it's input....
-  // These two parameter need to be saved and pushed as an object to the searchedArtists[]
-  // console.log(this.state.artistsInfo.strArtist);
-  // console.log(this.state.artistsInfo.strArtistThumb);
-
-
-  // afterSearch = (returnedInfo) =>{
-  
-  //   console.log(this.state.artistsInfo);
-  //     const newArtist = [];
-  //     const returnedInfoObj = this.state.artistsInfo;
-
-  //     for (let key in returnedInfoObj){
-  //       const artistInfoObj={
-  //         name: returnedInfoObj[key].strArtist,
-  //         image: returnedInfoObj[key].strArtistThumb
-  //       }
-  //       newArtist.push(artistInfoObj);
-  //     }
-  //     console.log(newArtist);
-  //     this.setState({
-  //       searchedArtists: newArtist
-  //     })
-  //     console.log(this.state);
-
-
-  //   // dbRef.on('value', (response) => {
-  //   //   const newArtist = [];
-  //   //   const searchedArtistImage = response.val();
-  //   //   console.log(searchedArtistImage);
-  
-  //   //   // for (let property in searchedArtistImage) {
-  //   //   //   console.log(property, searchedArtistImage[property]);
-  //   //   // }
-
-
-  //   //   this.setState({
-  //   //     searchedArtists: newArtist
-  //   //   })
-  //   // });
-  // }
-  // variable that holds a reference to the database
-  
-
-  
-
-  // showSearchedArtist = (searchedAristInfo) =>{
-  //   const dbRef = firebase.database().ref();
-  //   dbRef.on('value', (response) => {
-
-  //     // Here we use Firebase's .val() method to parse our database info the way we want it
-  //     console.log(response.val());
-  //     const newArtist = [];
-  //     const data = response.val();
-
-  //     for (let key in data) {
-  //       newArtist.push(data[key]);
-  //     }
-
-  //     this.setState({
-  //       searchedArtists: newArtist
-  //     })
-  //   })
-  // }
+  componentDidMount(){
+    const dbRef = firebase.database().ref();
+    console.log(dbRef);
+    dbRef.on('value', (data) =>{
+      console.log('component did mount',data.val());
+      let myData = data.val();
+      let newList = [];
+      for (let key in myData){
+        let newObj = {
+          image:myData[key].image,
+          name: myData[key].name
+        }
+        newList.push(newObj);
+      }
+      this.setState({
+        searchedArtists: newList
+      })
+    })
+  }
 
   render() { 
     return (
@@ -173,6 +136,9 @@ class App extends Component {
               })  
             }
           </section>
+
+        this.state.apiFailed?
+        component
 
             {/*moving through the array created in database to check if the value is displayed in the console  */}
           <section className="searchedInfo">
