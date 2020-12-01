@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/prachi-gujar-project-5/static/css/main.80f9ad07.chunk.css",
+    "main.js": "/prachi-gujar-project-5/static/js/main.cf500f37.chunk.js",
+    "main.js.map": "/prachi-gujar-project-5/static/js/main.cf500f37.chunk.js.map",
+    "runtime-main.js": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js",
+    "runtime-main.js.map": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js.map",
+    "static/js/2.a73b4c13.chunk.js": "/prachi-gujar-project-5/static/js/2.a73b4c13.chunk.js",
+    "static/js/2.a73b4c13.chunk.js.map": "/prachi-gujar-project-5/static/js/2.a73b4c13.chunk.js.map",
+    "static/js/3.1500dbb8.chunk.js": "/prachi-gujar-project-5/static/js/3.1500dbb8.chunk.js",
+    "static/js/3.1500dbb8.chunk.js.map": "/prachi-gujar-project-5/static/js/3.1500dbb8.chunk.js.map",
+    "index.html": "/prachi-gujar-project-5/index.html",
+    "static/css/main.80f9ad07.chunk.css.map": "/prachi-gujar-project-5/static/css/main.80f9ad07.chunk.css.map",
+    "static/js/2.a73b4c13.chunk.js.LICENSE.txt": "/prachi-gujar-project-5/static/js/2.a73b4c13.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/prachi-gujar-project-5/static/media/hannahTroupeHeader.cf11814e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33512fe1.js",
+    "static/js/2.a73b4c13.chunk.js",
+    "static/css/main.80f9ad07.chunk.css",
+    "static/js/main.cf500f37.chunk.js"
+  ]
+}
