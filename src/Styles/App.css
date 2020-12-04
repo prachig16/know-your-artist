@@ -19,6 +19,30 @@ h1{
   color: whitesmoke;
   
 }
+
+.goTop {
+  display: block; 
+  position: fixed; 
+  bottom: 30px; 
+  right: 10px; 
+  z-index: 99;
+  border: none; 
+  outline: none; 
+  cursor: pointer; 
+  padding: 15px; 
+  border-radius: 20px; 
+  font-size: 3rem; 
+}
+.goTop i{
+  color: #081749;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(245, 245, 245, 0.5);
+
+}
+.goTop:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
 /* Common styles.... */
 li,
 a,
@@ -57,6 +81,7 @@ main{
   list-style: none;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   background-color: rgba(7, 32, 87, 0.5);
   margin-right: 20px;
   width: calc((100% - 60px) / 4);

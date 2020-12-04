@@ -32,28 +32,29 @@
 
 .displayInfo section{
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 10px 5%;
     margin: 0 auto;
 }
 
-.displayInfo ul{
+.generalInfo{
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.displayInfo ul li{
+.generalInfo li{
     padding: 0 0 10px;
     list-style: none;
 }
 
-.displayInfo ul li i{
+.generalInfo li i{
     padding: 5px 10px;
     
 }
 
-.displayInfo ul li h4{
+.generalInfo li h4{
     margin: 0;
     padding: 0 0 10px;
     display: inline;
@@ -62,6 +63,31 @@
     font-weight: 500;
     font-style: italic;
 }
+
+/* Social media icon styles... */
+.socialMedia ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  padding: 0;
+  list-style: none;
+  cursor: pointer; 
+}
+
+.socialMedia ul a{
+  padding: 10px 15px;
+  color: whitesmoke;
+  font-size: 3.5rem;
+}
+
+.socialMedia ul a:hover,
+.socialMedia ul a:active,
+.socialMedia ul a:focus{
+  background-color: rgba(245, 245,245, 0.6);
+  color: #081749;
+}
+
+
 
 /* Artist Biography styles..... */
 .displayArtistInfo article{
@@ -81,13 +107,13 @@
 
 /* Media Queries..... */
 @media (max-width: 780px){
-    .displayInfo ul{
+    .generalInfo{
         padding: 0 0 0 10px;
     }
 }
 
 @media (max-width: 750px) {
-  .displayInfo ul li h4{
+  .generalInfo li h4{
     font-size: 2rem;
   }
 
@@ -109,11 +135,13 @@
     box-shadow: none;
   }
 
-  
-
   .displayInfo article{
     padding-top: 0;
   }
 
+  .socialMedia ul a:hover{
+    color: whitesmoke;
+    background-color: transparent;
+  }
 
 }

@@ -45,12 +45,12 @@ class App extends Component {
       console.log('api call here',apiData.data.artists);
       if (apiData.data.artists != null){
     
-      this.setState({
-        artistsInfo: apiData.data.artists
-      })
-      console.log(this.state.artistsInfo);
+        this.setState({
+          artistsInfo: apiData.data.artists
+        })
+        console.log(this.state.artistsInfo);
 
-      this.pushTheInfo(this.state.artistsInfo[0]);
+        this.pushTheInfo(this.state.artistsInfo[0]);
       }
       else{
         alert('Artist not found! Check the spelling or spaces!')
@@ -109,6 +109,7 @@ class App extends Component {
       <div className="wrapper">
         <header>
           <h1>Know your Artist!</h1>
+          <button className="goTop"><a href="#"><i class="fas fa-chevron-circle-up"></i></a></button>
         </header>
 
         <main>
@@ -131,6 +132,10 @@ class App extends Component {
                     artistStyle={artist.strStyle}
                     artistGenre={artist.strGenre}
                     artistBio={artist.strBiographyEN}
+                    artistFB={artist.strFacebook}
+                    artistTwitter={artist.strTwitter}
+                    artistWebsite={artist.strWebsite}
+                    artistLastFM={artist.strLastFMChart}
                   />
                 )
               })  
