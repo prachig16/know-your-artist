@@ -141,6 +141,9 @@ class App extends Component {
             <h2>Recent Searches:</h2>
             <ul>
               {
+                this.state.searchedArtists.length === 0 ?
+                <p>No recent searches.</p>
+                :
                 this.state.searchedArtists.map((artistSearch, index)=>{
                   return(
                     <li key={index}>
