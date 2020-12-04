@@ -80,8 +80,7 @@ class App extends Component {
     console.log(this.state.searchedArtists);
   }
 
-  
- 
+
   componentDidMount(){
     const dbRef = firebase.database().ref();
     console.log(dbRef);
