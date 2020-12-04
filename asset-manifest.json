@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/prachi-gujar-project-5/static/css/main.5aa0405d.chunk.css",
-    "main.js": "/prachi-gujar-project-5/static/js/main.81fc9f45.chunk.js",
-    "main.js.map": "/prachi-gujar-project-5/static/js/main.81fc9f45.chunk.js.map",
+    "main.css": "/prachi-gujar-project-5/static/css/main.d9758fb1.chunk.css",
+    "main.js": "/prachi-gujar-project-5/static/js/main.1b6f117f.chunk.js",
+    "main.js.map": "/prachi-gujar-project-5/static/js/main.1b6f117f.chunk.js.map",
     "runtime-main.js": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js",
     "runtime-main.js.map": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js.map",
     "static/js/2.dd91e7cb.chunk.js": "/prachi-gujar-project-5/static/js/2.dd91e7cb.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.1500dbb8.chunk.js": "/prachi-gujar-project-5/static/js/3.1500dbb8.chunk.js",
     "static/js/3.1500dbb8.chunk.js.map": "/prachi-gujar-project-5/static/js/3.1500dbb8.chunk.js.map",
     "index.html": "/prachi-gujar-project-5/index.html",
-    "static/css/main.5aa0405d.chunk.css.map": "/prachi-gujar-project-5/static/css/main.5aa0405d.chunk.css.map",
+    "static/css/main.d9758fb1.chunk.css.map": "/prachi-gujar-project-5/static/css/main.d9758fb1.chunk.css.map",
     "static/js/2.dd91e7cb.chunk.js.LICENSE.txt": "/prachi-gujar-project-5/static/js/2.dd91e7cb.chunk.js.LICENSE.txt",
     "static/media/index.css": "/prachi-gujar-project-5/static/media/hannahTroupeHeader.cf11814e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.33512fe1.js",
     "static/js/2.dd91e7cb.chunk.js",
-    "static/css/main.5aa0405d.chunk.css",
-    "static/js/main.81fc9f45.chunk.js"
+    "static/css/main.d9758fb1.chunk.css",
+    "static/js/main.1b6f117f.chunk.js"
   ]
 }
