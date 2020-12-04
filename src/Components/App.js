@@ -97,9 +97,11 @@ class App extends Component {
         }
         newList.push(newObj);
       }
+      // console.log(newList);
       this.setState({
         searchedArtists: newList
       })
+
     })
   }
 

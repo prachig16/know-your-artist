@@ -11,7 +11,7 @@ class UserForm extends Component {
                 <input type="text" id="newChoice" placeholder="Artist name.." required onChange={this.props.getInput} />
                 <div className="selectionButton">
                     <button onClick={this.props.getSubmit}>Search</button>
-                    <a href="./index.html"><i className="fas fa-redo"></i></a>
+                    <a href="./app.js"><i className="fas fa-redo"></i></a>
                 </div>
            </form>
         )
