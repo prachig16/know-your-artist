@@ -1,7 +1,7 @@
 /* Displaying information styles.... */
 
 /* TOP Div style.. */
-.displayArtistInfo{
+.displayArtistInfo {
   display: flex;
   flex-direction: column;
   background: rgba(7, 32, 87, 0.5);
@@ -11,26 +11,26 @@
 }
 
 /* Image and the side info styles..... */
-.displayInfo{
+.displayInfo {
     display: flex;
     align-items: center;
     padding: 20px;
 }
 
-.displayInfo figure{
+.displayInfo figure {
     margin: 0;
     margin-right: 20px;
     width: calc((100% - 20px) / 2);
     
 }
 
-.displayInfo img{
+.displayInfo img {
     width: 100%;
     padding: 20px;
     box-shadow: 20px 20px rgba(245, 245,245, 0.6);
 }
 
-.displayInfo section{
+.displayInfo section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,43 +38,43 @@
     margin: 0 auto;
 }
 
-.generalInfo{
+.generalInfo {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.generalInfo li{
+.generalInfo li {
     padding: 0 0 10px;
     list-style: none;
 }
 
-.generalInfo li i{
+.generalInfo li i {
     padding: 5px 10px;
     
 }
 
-.generalInfo li h4{
-    margin: 0;
-    padding: 0 0 10px;
+.generalInfo li h4 {
     display: inline;
     font-family: 'Raleway', sans-serif;
     font-size: 2.3rem;
     font-weight: 500;
     font-style: italic;
+    margin: 0;
+    padding: 0 0 10px;
 }
 
 /* Social media icon styles... */
-.socialMedia ul{
+.socialMedia ul{ 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
-  padding: 0;
   list-style: none;
   cursor: pointer; 
+  padding: 0;
 }
 
-.socialMedia ul a{
+.socialMedia ul a {
   padding: 10px 15px;
   color: whitesmoke;
   font-size: 3.5rem;
@@ -82,22 +82,20 @@
 
 .socialMedia ul a:hover,
 .socialMedia ul a:active,
-.socialMedia ul a:focus{
+.socialMedia ul a:focus {
   background-color: rgba(245, 245,245, 0.6);
   color: #081749;
 }
 
-
-
 /* Artist Biography styles..... */
-.displayArtistInfo article{
+.displayArtistInfo article {
     line-height: 1.5;
     text-align: left;
     display: block;
     padding: 40px;
 }
 
-.displayArtistInfo h3{
+.displayArtistInfo h3 {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     font-weight: 600;
@@ -106,9 +104,9 @@
 
 
 /* Media Queries..... */
-@media (max-width: 780px){
+@media (max-width: 780px) {
     .generalInfo{
-        padding: 0 0 0 10px;
+      padding: 0 0 0 10px;
     }
 }
 
@@ -125,21 +123,21 @@
     margin-bottom: 0;
   }
 
-  .displayInfo figure{
+  .displayInfo figure {
     margin: 0;
     width: 100%;
     background: rgba(245,245,245,0.5);
   }
 
-  .displayInfo img{
+  .displayInfo img {
     box-shadow: none;
   }
 
-  .displayInfo article{
+  .displayInfo article {
     padding-top: 0;
   }
 
-  .socialMedia ul a:hover{
+  .socialMedia ul a:hover {
     color: whitesmoke;
     background-color: transparent;
   }

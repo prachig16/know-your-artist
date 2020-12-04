@@ -16,7 +16,6 @@ class App extends Component {
       searchedArtists: [],
       displaySearchResult: []
     }
-    console.log("constructor lifecyle",this.state);
   }
   
   // setting the user selection to the value of the input form.....
@@ -42,7 +41,6 @@ class App extends Component {
         s: userChoice
       }
     }).then((apiData) => {
-      console.log('api call here',apiData.data.artists);
       if (apiData.data.artists != null){
         // Setting the API call to artsistInfo if the returned API is not null
         this.setState({
