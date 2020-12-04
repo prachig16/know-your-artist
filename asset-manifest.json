@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/prachi-gujar-project-5/static/css/main.ee0b7643.chunk.css",
-    "main.js": "/prachi-gujar-project-5/static/js/main.d1647a7e.chunk.js",
-    "main.js.map": "/prachi-gujar-project-5/static/js/main.d1647a7e.chunk.js.map",
+    "main.js": "/prachi-gujar-project-5/static/js/main.2e766d22.chunk.js",
+    "main.js.map": "/prachi-gujar-project-5/static/js/main.2e766d22.chunk.js.map",
     "runtime-main.js": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js",
     "runtime-main.js.map": "/prachi-gujar-project-5/static/js/runtime-main.33512fe1.js.map",
     "static/js/2.dd91e7cb.chunk.js": "/prachi-gujar-project-5/static/js/2.dd91e7cb.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.33512fe1.js",
     "static/js/2.dd91e7cb.chunk.js",
     "static/css/main.ee0b7643.chunk.css",
-    "static/js/main.d1647a7e.chunk.js"
+    "static/js/main.2e766d22.chunk.js"
   ]
 }
