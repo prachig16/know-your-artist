@@ -44,12 +44,11 @@ class App extends Component {
     }).then((apiData) => {
       console.log('api call here',apiData.data.artists);
       if (apiData.data.artists != null){
-    
+        // Setting the API call to artsistInfo if the returned API is not null
         this.setState({
           artistsInfo: apiData.data.artists
         })
-        console.log(this.state.artistsInfo);
-
+        
         this.pushTheInfo(this.state.artistsInfo[0]);
       }
       else{
@@ -58,35 +57,33 @@ class App extends Component {
     })
   }
 
+  // writing a function, to push the details to db, which will take API call as an argument when submit is clicked..
   pushTheInfo = (infoReceived) =>{
     const dbRef = firebase.database().ref();
-    console.log(dbRef);
+  
     const newArtist = [];
-    // this.state.searchedArtists;
-    console.log('IMPORTANT', newArtist);
+    
     const infoToPush = {
       name: infoReceived.strArtist,
       image: infoReceived.strArtistThumb
     }
     newArtist.push(infoToPush);
-    console.log('inside', newArtist);
 
     dbRef.push(newArtist[0])
-    console.log('check this!',dbRef);
+    
     this.setState({
       // setting this new array with 2 objects to the set
       searchedArtists: newArtist
     })
-    console.log(this.state.searchedArtists);
   }
 
   
  
   componentDidMount(){
     const dbRef = firebase.database().ref();
-    console.log(dbRef);
+    
     dbRef.on('value', (data) =>{
-      console.log('component did mount',data.val());
+      
       let myData = data.val();
       let newList = [];
       for (let key in myData){
@@ -96,7 +93,7 @@ class App extends Component {
         }
         newList.push(newObj);
       }
-      console.log('mounted artist', newList);
+      
       this.setState({
         displaySearchResult: newList
       }) 
@@ -109,7 +106,7 @@ class App extends Component {
       <div className="wrapper">
         <header>
           <h1>Know your Artist!</h1>
-          <button className="goTop"><a href="#"><i class="fas fa-chevron-circle-up"></i></a></button>
+          <button className="goTop"><a href="#"><i className="fas fa-chevron-circle-up"></i></a></button>
         </header>
 
         <main>
