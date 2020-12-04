@@ -13,7 +13,8 @@ class App extends Component {
     this.state ={
       artistsInfo: [],
       userSelection: '',
-      searchedArtists: []
+      searchedArtists: [],
+      displaySearchResult: []
     }
     console.log("constructor lifecyle",this.state);
   }
@@ -48,39 +49,37 @@ class App extends Component {
         artistsInfo: apiData.data.artists
       })
       console.log(this.state.artistsInfo);
-      // after receiving the API call, called the empty DB   
-      const dbRef = firebase.database().ref();
-      const newArtist = this.state.searchedArtists;
-      dbRef.once('value', (returnedInfoObj) => {
-        // created an empty array to store the object which will be returned from the API object
-        // assigning the parameter to the API artist info call
-        returnedInfoObj = this.state.artistsInfo[0];
-        
-        const artistInfoObj = {
-          name: returnedInfoObj.strArtist,
-          image: returnedInfoObj.strArtistThumb
-        }
-          // pushing this object in the empty array
-      
-        newArtist.push(artistInfoObj);
-        
 
-       console.log('inside then',newArtist);
-        dbRef.push(newArtist[0]);
-
-        this.setState({
-          // setting this new array with 2 objects to the set
-          searchedArtists: newArtist
-        })
-        console.log(this.state.searchedArtists);
-      })
-      console.log(newArtist);
+      this.pushTheInfo(this.state.artistsInfo[0]);
       }
       else{
         alert('Artist not found! Check the spelling or spaces!')
       }
     })
   }
+
+  pushTheInfo = (infoReceived) =>{
+    const dbRef = firebase.database().ref();
+    console.log(dbRef);
+    const newArtist = [];
+    // this.state.searchedArtists;
+    console.log('IMPORTANT', newArtist);
+    const infoToPush = {
+      name: infoReceived.strArtist,
+      image: infoReceived.strArtistThumb
+    }
+    newArtist.push(infoToPush);
+    console.log('inside', newArtist);
+
+    dbRef.push(newArtist[0])
+    console.log('check this!',dbRef);
+    this.setState({
+      // setting this new array with 2 objects to the set
+      searchedArtists: newArtist
+    })
+    console.log(this.state.searchedArtists);
+  }
+
   
  
   componentDidMount(){
@@ -97,12 +96,12 @@ class App extends Component {
         }
         newList.push(newObj);
       }
-      // console.log(newList);
+      console.log('mounted artist', newList);
       this.setState({
-        searchedArtists: newList
-      })
-
+        displaySearchResult: newList
+      }) 
     })
+    
   }
 
   render() { 
@@ -143,10 +142,10 @@ class App extends Component {
             <h2>Recent Searches:</h2>
             <ul>
               {
-                this.state.searchedArtists.length === 0 ?
+                this.state.displaySearchResult.length === 0 ?
                 <p>No recent searches.</p>
                 :
-                this.state.searchedArtists.map((artistSearch, index)=>{
+                this.state.displaySearchResult.map((artistSearch, index)=>{
                   return(
                     <li key={index}>
                       <img src={artistSearch.image} alt="randomimage"/>
