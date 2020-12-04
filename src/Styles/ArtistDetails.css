@@ -1,0 +1,119 @@
+/* Displaying information styles.... */
+
+/* TOP Div style.. */
+.displayArtistInfo{
+  display: flex;
+  flex-direction: column;
+  background: rgba(7, 32, 87, 0.5);
+  font-size: 2rem;
+  color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Image and the side info styles..... */
+.displayInfo{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.displayInfo figure{
+    margin: 0;
+    margin-right: 20px;
+    width: calc((100% - 20px) / 2);
+    
+}
+
+.displayInfo img{
+    width: 100%;
+    padding: 20px;
+    box-shadow: 20px 20px rgba(245, 245,245, 0.6);
+}
+
+.displayInfo section{
+    display: flex;
+    align-items: center;
+    padding: 10px 5%;
+    margin: 0 auto;
+}
+
+.displayInfo ul{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.displayInfo ul li{
+    padding: 0 0 10px;
+    list-style: none;
+}
+
+.displayInfo ul li i{
+    padding: 5px 10px;
+    
+}
+
+.displayInfo ul li h4{
+    margin: 0;
+    padding: 0 0 10px;
+    display: inline;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Artist Biography styles..... */
+.displayArtistInfo article{
+    line-height: 1.5;
+    text-align: left;
+    display: block;
+    padding: 40px;
+}
+
+.displayArtistInfo h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+
+/* Media Queries..... */
+@media (max-width: 780px){
+    .displayInfo ul{
+        padding: 0 0 0 10px;
+    }
+}
+
+@media (max-width: 750px) {
+  .displayInfo ul li h4{
+    font-size: 2rem;
+  }
+
+  .displayInfo {
+    font-size: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 15px 0;
+    margin-bottom: 0;
+  }
+
+  .displayInfo figure{
+    margin: 0;
+    width: 100%;
+    background: rgba(245,245,245,0.5);
+  }
+
+  .displayInfo img{
+    box-shadow: none;
+  }
+
+  
+
+  .displayInfo article{
+    padding-top: 0;
+  }
+
+
+}

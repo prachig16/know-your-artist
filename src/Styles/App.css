@@ -1,0 +1,124 @@
+/* APP styles */
+.App {
+  text-align: center;
+}
+/* HEADER styles... */
+header{
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 9rem;
+  color: whitesmoke;
+  
+}
+/* Common styles.... */
+li,
+a,
+h2, 
+h4{
+  font-family: 'Raleway', sans-serif;
+}
+
+/* MAIN styles....... */
+
+main{
+  min-height: calc(15vh - 20px);
+}
+
+/* displaying searched artists styles... */
+.searchedInfo h2{
+  font-weight: 500;
+  font-size: 4rem;
+  color: whitesmoke;
+  text-align: left;
+  border-bottom: 2px solid rgba(245, 245, 245, 0.5);
+  margin: 0 0 5%;
+  padding: 10px;
+}
+
+.searchedInfo ul{
+  display: flex;
+  overflow: scroll;
+  border-bottom: 2px solid rgba(245, 245, 245, 0.5);
+  padding: 0 5px 20px;
+}
+
+.searchedInfo li{
+  color: whitesmoke;
+  font-size: 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(7, 32, 87, 0.5);
+  margin-right: 20px;
+  width: calc((100% - 60px) / 4);
+}
+
+.searchedInfo p{
+  margin: 0;
+  padding: 5px 5px 10px;
+}
+
+.searchedInfo img{
+  padding: 20px;
+}
+
+/* FOOTER styles.... */
+
+footer{
+  color: whitesmoke;
+  min-height: 5vh;
+}
+
+footer p,
+footer i{
+  font-size: 2rem;
+  margin: 0;
+}
+
+footer p a{
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 5px;
+}
+
+footer p a:hover,
+footer p a:focus,
+footer p a:active{
+  background-color: whitesmoke;
+  color: #081749;
+}
+
+
+/* Media Queries...... */
+
+@media (max-width: 750px) {
+  h1{
+    font-size: 6rem;
+  }
+
+  .searchedInfo h2{
+    font-size: 3rem;
+  }
+
+  .searchedInfo li{
+    width: calc((100% - 20px) / 2);
+  }
+
+  .searchedInfo p{
+    font-size: 1.8rem;
+  }
+
+  footer p a:hover{
+    background-color: transparent;
+    color: whitesmoke;
+  }
+}  

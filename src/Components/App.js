@@ -1,10 +1,9 @@
-import './App.css';
+import '../Styles/App.css';
 import axios from 'axios';
 import { Component } from 'react';
 import ArtistDetails from './ArtistDetails.js';
 import UserForm from './UserForm.js';
-import firebase from './firebase.js';
-
+import firebase from '../firebase.js';
 
 
 class App extends Component {
@@ -56,7 +55,7 @@ class App extends Component {
         // created an empty array to store the object which will be returned from the API object
         // assigning the parameter to the API artist info call
         returnedInfoObj = this.state.artistsInfo[0];
-        // for (let key in returnedInfoObj) {
+        
         const artistInfoObj = {
           name: returnedInfoObj.strArtist,
           image: returnedInfoObj.strArtistThumb
@@ -64,7 +63,7 @@ class App extends Component {
           // pushing this object in the empty array
       
         newArtist.push(artistInfoObj);
-        // }
+        
 
        console.log('inside then',newArtist);
         dbRef.push(newArtist[0]);
@@ -137,22 +136,24 @@ class App extends Component {
             }
           </section>
 
-        this.state.apiFailed?
-        component
-
             {/*moving through the array created in database to check if the value is displayed in the console  */}
           <section className="searchedInfo">
+            <h2>Recent Searches:</h2>
             <ul>
               {
                 this.state.searchedArtists.map((artistSearch, index)=>{
                   return(
-                    <li key={index}><img src={artistSearch.image} alt="randomimage" />{artistSearch.name}</li>
+                    <li key={index}>
+                      <img src={artistSearch.image} alt="randomimage"/>
+                      <p>{artistSearch.name}</p>
+                    </li>
                   )
                 })
               }
             </ul>
           </section>
         </main>
+
         <footer>
           <p> Copyright <i className="far fa-copyright"></i> <a href="https://junocollege.com/">2019 HackerYou</a> | 
            Created by Prachi G.</p>

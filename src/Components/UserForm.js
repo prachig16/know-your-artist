@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './UserForm.css'
+import '../Styles/UserForm.css';
 
 
 class UserForm extends Component {
