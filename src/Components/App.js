@@ -82,13 +82,16 @@ class App extends Component {
     dbRef.on('value', (data) =>{
       
       let myData = data.val();
+      let list = [];
       let newList = [];
       for (let key in myData){
         let newObj = {
           image:myData[key].image,
           name: myData[key].name
         }
-        newList.push(newObj);
+        list.push(newObj);
+        newList = list.reverse();
+        
       }
       
       this.setState({
