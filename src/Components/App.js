@@ -41,6 +41,7 @@ class App extends Component {
         s: userChoice
       }
     }).then((apiData) => {
+
       if (apiData.data.artists != null){
         // Setting the API call to artsistInfo if the returned API is not null
         this.setState({
@@ -61,9 +62,11 @@ class App extends Component {
   
     const newArtist = [];
     
+    console.log(infoReceived);
     const infoToPush = {
       name: infoReceived.strArtist,
-      image: infoReceived.strArtistThumb
+      image: infoReceived.strArtistThumb,
+      link: infoReceived.strLastFMChart
     }
     newArtist.push(infoToPush);
 
@@ -75,7 +78,9 @@ class App extends Component {
     })
   }
 
+ 
 
+  // When page loads..
   componentDidMount(){
     const dbRef = firebase.database().ref();
     
@@ -87,18 +92,17 @@ class App extends Component {
       for (let key in myData){
         let newObj = {
           image:myData[key].image,
-          name: myData[key].name
+          name: myData[key].name,
+          link: myData[key].link
         }
         list.push(newObj);
         newList = list.reverse();
-        
       }
       
       this.setState({
         displaySearchResult: newList
       }) 
     })
-    
   }
 
   render() { 
@@ -115,7 +119,6 @@ class App extends Component {
             getSubmit={this.handleInputSubmit}
           />
           
-
           <section className="displayArtistInfo">
             {
               this.state.artistsInfo.map((artist, index) => {
@@ -135,13 +138,14 @@ class App extends Component {
                     artistLastFM={artist.strLastFMChart}
                   />
                 )
-              })  
+              })
             }
           </section>
-
+          
             {/*moving through the array created in database to check if the value is displayed in the console  */}
           <section className="searchedInfo">
             <h2>Recent Searches:</h2>
+           
             <ul>
               {
                 this.state.displaySearchResult.length === 0 ?
@@ -150,8 +154,19 @@ class App extends Component {
                 this.state.displaySearchResult.map((artistSearch, index)=>{
                   return(
                     <li key={index}>
-                      <img src={artistSearch.image} alt="randomimage"/>
-                      <p>{artistSearch.name}</p>
+                      {/* Check if the default is image available */}
+                      {
+                        (artistSearch.image)
+                        ? <img src={artistSearch.image} alt={artistSearch.name}/>
+                          : <img src="https://i.ibb.co/B40DvyL/no-Photo-Found.png" alt={artistSearch.name} />
+                      }
+
+                      {/* Check if the default link is available */}
+                      {
+                        (artistSearch.link)
+                          ? <p><a href={artistSearch.link}>{artistSearch.name}</a></p>
+                          : <p><a href="https://www.last.fm/music">{artistSearch.name}</a></p>
+                      }
                     </li>
                   )
                 })
